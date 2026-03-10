@@ -545,44 +545,95 @@ a:hover ~ .cursor, button:hover ~ .cursor { transform: translate(-50%,-50%) scal
   background: radial-gradient(circle, rgba(62,255,207,0.2), transparent);
 }
 
-/* Web Scene 2 */
-.web-scene-2 { background: linear-gradient(135deg, #0a180a 0%, #0d2014 100%); }
-.dashboard-mock {
-  width: 85%; height: 75%; display: flex;
-  background: #111f18; border-radius: 6px; overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-  transform: perspective(600px) rotateX(3deg);
+/* ── Piano card visual overrides ── */
+.wave-svg {
+  width: 70%; height: 12px; display: block;
 }
-.dash-sidebar {
-  width: 40px; background: #0d180d;
-  padding: 12px 6px; display: flex; flex-direction: column; gap: 8px;
+
+.piano-keys-strip {
+  display: flex !important;
+  gap: 2px;
+  height: 38px !important;
+  background: #0d0f15;
+  border-radius: 4px;
+  padding: 4px 4px 0;
+  align-items: flex-end;
+  width: 100% !important;
 }
-.ds-item {
-  height: 20px; background: rgba(66,184,131,0.15); border-radius: 3px;
+
+.pk {
+  flex: 1;
+  border-radius: 0 0 3px 3px;
 }
-.ds-item.active { background: rgba(66,184,131,0.5); }
-.dash-main { flex: 1; padding: 10px; display: flex; flex-direction: column; gap: 8px; }
-.dash-chart {
-  flex: 1; background: rgba(66,184,131,0.05);
-  border-radius: 4px; position: relative; overflow: hidden;
+.pk-w {
+  height: 34px;
+  background: linear-gradient(180deg, #d8d2c4, #ece6d8);
+  border: 1px solid #b0a890;
 }
-.dash-chart::before {
-  content: ''; position: absolute; bottom: 10px; left: 0; right: 0; height: 40%;
-  background: linear-gradient(90deg,
-    transparent 0%, transparent 10%,
-    rgba(66,184,131,0.5) 10%, rgba(66,184,131,0.5) 15%,
-    transparent 15%, transparent 20%,
-    rgba(66,184,131,0.7) 20%, rgba(66,184,131,0.7) 28%,
-    transparent 28%, transparent 35%,
-    rgba(66,184,131,0.4) 35%, rgba(66,184,131,0.4) 42%,
-    transparent 42%, transparent 50%,
-    rgba(66,184,131,0.8) 50%, rgba(66,184,131,0.8) 58%,
-    transparent 58%, transparent 65%,
-    rgba(66,184,131,0.3) 65%, rgba(66,184,131,0.3) 70%
-  );
+.pk-b {
+  height: 22px;
+  background: linear-gradient(180deg, #1a1d24, #0d0f14);
+  border: 1px solid #000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
-.dash-stats { display: flex; gap: 8px; }
-.dstat { flex: 1; height: 24px; background: rgba(66,184,131,0.1); border-radius: 3px; }
+.pk-glow {
+  background: linear-gradient(180deg, #f5d98a, #ffe9a0) !important;
+  border-color: #c9a84c !important;
+  box-shadow: 0 0 8px rgba(201,168,76,0.6);
+}
+.pk-cyan {
+  background: linear-gradient(180deg, #1e2a35, #4fc3f7) !important;
+  box-shadow: 0 0 8px rgba(79,195,247,0.5);
+}
+
+.piano-pill-row {
+  display: flex !important;
+  gap: 5px;
+  align-items: center;
+  width: 100% !important;
+  background: none !important;
+  height: auto !important;
+}
+.piano-pill {
+  height: 5px !important;
+  width: 28px !important;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.08) !important;
+}
+.piano-pill.wide { width: 48px !important; }
+
+.piano-note-dot {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background: rgba(201,168,76,0.25) !important;
+  border: 1px solid rgba(201,168,76,0.4);
+}
+.piano-note-dot.gold {
+  background: rgba(201,168,76,0.7) !important;
+  box-shadow: 0 0 6px rgba(201,168,76,0.5);
+}
+
+.piano-orb {
+  font-size: 18px;
+  background: none !important;
+  color: #c9a84c;
+  opacity: 0.35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: float 3.5s ease-in-out infinite;
+}
+.piano-orb.orb-2 {
+  color: #4fc3f7;
+  font-size: 14px;
+  animation-delay: 1.8s;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0);    opacity: 0.3; }
+  50%      { transform: translateY(-7px); opacity: 0.55; }
+}
 
 /* Game Scene 2 */
 .game-scene-2 { background: #000; overflow: hidden; }
