@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COREDIB</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Noise Overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">
+      <span class="logo-bracket">[</span>
+      <span class="logo-text">COREDIB</span>
+      <span class="logo-bracket">]</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero" data-text="HOME">HOME</a></li>
+      <li><a href="#works" data-text="WORKS">WORKS</a></li>
+      <li><a href="#about" data-text="ABOUT">ABOUT</a></li>
+      <li><a href="#contact" data-text="CONTACT">CONTACT</a></li>
+    </ul>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      <span>CONTACT FOR WORKS</span>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════ HERO SECTION ═══════════════════════ -->
+  <section class="hero" id="hero">
+    <canvas id="heroCanvas"></canvas>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow reveal-up">
+        <span class="dash">—</span>
+        <span>CREATIVE DEVELOPER & DESIGNER</span>
+        <span class="dash">—</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="line reveal-up" style="--delay:0.1s">CRAFTING</span>
+        <span class="line reveal-up accent-line" style="--delay:0.2s">DIGITAL</span>
+        <span class="line reveal-up" style="--delay:0.3s">WORLDS</span>
+      </h1>
+      <p class="hero-sub reveal-up" style="--delay:0.45s">
+        Web Development · Game Development · Digital Art · App Development
+      </p>
+      <div class="hero-cta reveal-up" style="--delay:0.6s">
+        <a href="#works" class="btn-primary">VIEW MY WORK</a>
+        <a href="#contact" class="btn-ghost">GET IN TOUCH →</a>
+      </div>
+    </div>
+
+    <div class="hero-3d-scene" id="heroScene">
+      <div class="floating-cube" id="cube3d">
+        <div class="cube-face front"></div>
+        <div class="cube-face back"></div>
+        <div class="cube-face left"></div>
+        <div class="cube-face right"></div>
+        <div class="cube-face top"></div>
+        <div class="cube-face bottom"></div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      <span>SCROLL</span>
+    </div>
+
+    <div class="hero-counter">
+      <div class="counter-item reveal-up" style="--delay:0.7s">
+        <span class="count" data-target="5">0</span>
+        <span class="count-label">Projects</span>
+      </div>
+      <div class="counter-item reveal-up" style="--delay:0.8s">
+        <span class="count" data-target="2">0</span>
+        <span class="count-label">Years Exp.</span>
+      </div>
+      <div class="counter-item reveal-up" style="--delay:0.9s">
+        <span class="count" data-target="--">0</span>
+        <span class="count-label">Clients</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ MARQUEE ═══════════════════════ -->
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <span>WEB DEVELOPMENT</span>
+      <span class="marquee-sep">✦</span>
+      <span>GAME DEVELOPMENT</span>
+      <span class="marquee-sep">✦</span>
+      <span>DIGITAL ART</span>
+      <span class="marquee-sep">✦</span>
+      <span>APP DEVELOPMENT</span>
+      <span class="marquee-sep">✦</span>
+      <span>UI/UX DESIGN</span>
+      <span class="marquee-sep">✦</span>
+      <span>3D MODELING</span>
+      <span class="marquee-sep">✦</span>
+      <span>WEB DEVELOPMENT</span>
+      <span class="marquee-sep">✦</span>
+      <span>GAME DEVELOPMENT</span>
+      <span class="marquee-sep">✦</span>
+      <span>DIGITAL ART</span>
+      <span class="marquee-sep">✦</span>
+      <span>APP DEVELOPMENT</span>
+      <span class="marquee-sep">✦</span>
+      <span>UI/UX DESIGN</span>
+      <span class="marquee-sep">✦</span>
+      <span>3D MODELING</span>
+      <span class="marquee-sep">✦</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════ WORKS SECTION ═══════════════════════ -->
+  <section class="works" id="works">
+    <div class="section-header">
+      <div class="section-label reveal-left">
+        <span>02</span>
+        <span class="label-line"></span>
+        <span>PROJECTS</span>
+      </div>
+      <h2 class="section-title reveal-up">
+        MY <em>PORTFOLIO</em>
+      </h2>
+    </div>
+
+    <!-- FILTER TABS -->
+    <div class="filter-tabs reveal-up">
+      <button class="tab active" data-filter="all">ALL</button>
+      <button class="tab" data-filter="web">WEB</button>
+      <button class="tab" data-filter="game">GAME</button>
+      <button class="tab" data-filter="art">ART</button>
+      <button class="tab" data-filter="app">APP</button>
+    </div>
+
+    <!-- PROJECTS GRID -->
+    <div class="projects-grid" id="projectsGrid">
+
+      <!-- WEB PROJECT 1 -->
+      <article class="project-card reveal-card" data-category="web" data-index="1">
+        <div class="card-3d-wrapper">
+          <div class="card-inner">
+            <div class="card-visual">
+              <div class="project-scene web-scene">
+                <div class="browser-mockup">
+                  <div class="browser-bar">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="browser-content">
+                    <div class="web-lines">
+                      <div class="wl wl-h"></div>
+                      <div class="wl wl-p"></div>
+                      <div class="wl wl-p short"></div>
+                      <div class="web-blocks">
+                        <div class="wb"></div>
+                        <div class="wb"></div>
+                        <div class="wb"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="floating-orb orb-1"></div>
+                <div class="floating-orb orb-2"></div>
+              </div>
+              <div class="card-overlay">
+                <div class="card-tags">
+                  <span>HTML</span><span>JAVA</span><span>CSS</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="cat-badge web">WEB</span>
+                <span class="year">2025</span>
+              </div>
+              <h3>AABIXES</h3>
+              <p>An e-partner making your life easy</p>
+              <div class="card-footer">
+                <a href="https://rabhadibyajyoti05-cpu.github.io/AABIXES/#" class="view-link">VIEW PROJECT <span>→</span></a>
+                <div class="tech-dots">
+                  <span class="tdot" style="background:#61dafb"></span>
+                  <span class="tdot" style="background:#f0db4f"></span>
+                  <span class="tdot" style="background:#68a063"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- GAME PROJECT 1 -->
+      <article class="project-card reveal-card" data-category="game" data-index="2">
+        <div class="card-3d-wrapper">
+          <div class="card-inner">
+            <div class="card-visual">
+              <div class="project-scene game-scene">
+                <div class="">
+                  <div class="game-sky"></div>
+                  <div class=""></div>
+                  <div class=""></div>
+                  <div class="">
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                  </div>
+                  <div class="game-stars">
+                    <div class="gstar"></div><div class="gstar"></div>
+                    <div class="gstar"></div><div class="gstar"></div>
+                    <div class="gstar"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-overlay">
+                <div class="card-tags">
+                  <span>HTML</span><span>CSS</span><span>JAVA</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="cat-badge game">GAME</span>
+                <span class="year">2026</span>
+              </div>
+              <h3>SHUUJET</h3>
+              <p>SANDBOX 2D adventure SHOOTER with FUN GAME MECHANICS AND UI.</p>
+              <div class="card-footer">
+                <a href="https://rabhadibyajyoti05-cpu.github.io/SHUUJET/" class="view-link">VIEW PROJECT <span>→</span></a>
+                <div class="tech-dots">
+                  <span class="tdot" style="background:#222c37"></span>
+                  <span class="tdot" style="background:#1a9dff"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ART PROJECT 1 -->
+      <article class="project-card reveal-card" data-category="art" data-index="3">
+        <div class="card-3d-wrapper">
+          <div class="card-inner">
+            <div class="card-visual">
+              <div class="project-scene art-scene">
+                <canvas class="art-canvas" id="artCanvas1"></canvas>
+                <div class="art-frame"></div>
+              </div>
+              <div class="card-overlay">
+                <div class="card-tags">
+                  <span>-</span><span>-</span><span>-</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="cat-badge art">ART</span>
+                <span class="year">2026</span>
+              </div>
+              <h3>COMING SOON</h3>
+              <p>Stay tuned for updates</p>
+              <div class="card-footer">
+                <a href="#" class="view-link">coming soon<span>→</span></a>
+                <div class="tech-dots">
+                  <span class="tdot" style="background:#ff6b6b"></span>
+                  <span class="tdot" style="background:#ffd93d"></span>
+                  <span class="tdot" style="background:#6bcb77"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- APP PROJECT 1 -->
+      <article class="project-card reveal-card" data-category="app" data-index="4">
+        <div class="card-3d-wrapper">
+          <div class="card-inner">
+            <div class="card-visual">
+              <div class="project-scene app-scene">
+                <div class="phone-mockup">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen">
+                    <div class="app-ui">
+                      <div class="app-header"></div>
+                      <div class="app-card-sm"></div>
+                      <div class="app-card-sm short"></div>
+                      <div class="app-row">
+                        <div class="app-icon-sm"></div>
+                        <div class="app-icon-sm"></div>
+                        <div class="app-icon-sm"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="floating-orb orb-3"></div>
+              </div>
+              <div class="card-overlay">
+                <div class="card-tags">
+                  <span>-</span><span>-</span><span>-</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="cat-badge app">APP</span>
+                <span class="year">2027</span>
+              </div>
+              <h3>COMING SOON</h3>
+              <p>STAY TUNED</p>
+              <div class="card-footer">
+                <a href="#" class="view-link">COMING SOON<span>→</span></a>
+                <div class="tech-dots">
+                  <span class="tdot" style="background:#54c5f8"></span>
+                  <span class="tdot" style="background:#ff6b6b"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- GAME PROJECT 2 -->
+      <article class="project-card reveal-card" data-category="game" data-index="6">
+        <div class="card-3d-wrapper">
+          <div class="card-inner">
+            <div class="card-visual">
+              <div class="project-scene game-scene-2">
+                <div class="space-bg">
+                  <div class="planet"></div>
+                  <div class="stars-field">
+                    <div class="sf-star"></div><div class="sf-star"></div>
+                    <div class="sf-star"></div><div class="sf-star"></div>
+                    <div class="sf-star"></div><div class="sf-star"></div>
+                    <div class="sf-star"></div><div class="sf-star"></div>
+                  </div>
+                  <div class="spaceship"></div>
+                </div>
+              </div>
+              <div class="card-overlay">
+                <div class="card-tags">
+                  <span>Godot</span><span>GDScript</span><span>--</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="cat-badge game">GAME</span>
+                <span class="year">2026</span>
+              </div>
+              <h3>SKY SHOOTER</h3>
+              <p>2.5D space shooter with phsics</p>
+                <a href="#" class="view-link">RELEASING SOON <span>→</span></a>
+                <div class="tech-dots">
+                  <span class="tdot" style="background:#478cbf"></span>
+                  <span class="tdot" style="background:#4d7acf"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ SKILLS SECTION ═══════════════════════ -->
+  <section class="skills-section" id="skills">
+    <div class="skills-bg-text">SKILLS</div>
+    <div class="section-header">
+      <div class="section-label reveal-left">
+        <span>03</span>
+        <span class="label-line"></span>
+        <span>EXPERTISE</span>
+      </div>
+      <h2 class="section-title reveal-up">TOOLS &amp; <em>TECH</em></h2>
+    </div>
+
+    <div class="skills-orbit" id="skillsOrbit">
+      <div class="orbit-center">
+        <div class="orbit-core">ME</div>
+      </div>
+      <div class="orbit orbit-1">
+        <div class="orbit-item" style="--angle:0deg"><span>HTML</span></div>
+        <div class="orbit-item" style="--angle:72deg"><span>Three.js</span></div>
+        <div class="orbit-item" style="--angle:144deg"><span>Node.js</span></div>
+        <div class="orbit-item" style="--angle:216deg"><span>JavaScript</span></div>
+        <div class="orbit-item" style="--angle:288deg"><span>CSS</span></div>
+      </div>
+      <div class="orbit orbit-2">
+        <div class="orbit-item" style="--angle:36deg"><span>CSS</span></div>
+        <div class="orbit-item" style="--angle:108deg"><span>Javascript</span></div>
+        <div class="orbit-item" style="--angle:180deg"><span>JAVA</span></div>
+        <div class="orbit-item" style="--angle:252deg"><span>Blender</span></div>
+        <div class="orbit-item" style="--angle:324deg"><span>CSS</span></div>
+      </div>
+    </div>
+
+    <div class="skill-bars reveal-up">
+      <div class="skill-bar-item">
+        <div class="sb-label"><span>Web Development</span><span class="sb-pct">95%</span></div>
+        <div class="sb-track"><div class="sb-fill" data-width="95"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="sb-label"><span>Game Development</span><span class="sb-pct">82%</span></div>
+        <div class="sb-track"><div class="sb-fill" data-width="82"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="sb-label"><span>Digital Art</span><span class="sb-pct">88%</span></div>
+        <div class="sb-track"><div class="sb-fill" data-width="88"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="sb-label"><span>App Development</span><span class="sb-pct">78%</span></div>
+        <div class="sb-track"><div class="sb-fill" data-width="78"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ ABOUT SECTION ═══════════════════════ -->
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="section-label reveal-left">
+          <span>04</span>
+          <span class="label-line"></span>
+          <span>ABOUT ME</span>
+        </div>
+        <h2 class="about-title reveal-up">
+          I TURN IDEAS INTO<br/><em>EXPERIENCES</em>
+        </h2>
+        <p class="about-text reveal-up">
+          I'm a multi-disciplinary creative developer who bridges the gap between design and technology. With 2+ years of experience across web, game, and app development, I craft digital experiences that are not just functional — they're unforgettable.
+        </p>
+        <p class="about-text reveal-up">
+          From building immersive 2D to 3D worlds to shipping production-ready apps, I bring the same obsessive attention to detail to every project. My art background informs my engineering — and vice versa.
+        </p>
+        <a href="#contact" class="btn-primary reveal-up" style="--delay:0.3s">LET'S COLLABORATE</a>
+      </div>
+      <div class="about-right reveal-right">
+        <div class="about-3d-card">
+          <div class="a3d-inner">
+            <div class="avatar-placeholder">
+              <div class="avatar-ring ring-1"></div>
+              <div class="avatar-ring ring-2"></div>
+              <div class="avatar-ring ring-3"></div>
+              <div class="avatar-core">
+                <div class="avatar-icon">{ }</div>
+              </div>
+            </div>
+            <div class="about-badges">
+              <div class="badge b1">Web</div>
+              <div class="badge b2"> Games</div>
+              <div class="badge b3"> Art</div>
+              <div class="badge b4"> Apps</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ CONTACT SECTION ═══════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="contact-bg">
+      <div class="cbg-grid"></div>
+    </div>
+    <div class="contact-content">
+      <div class="section-label reveal-left">
+        <span>05</span>
+        <span class="label-line"></span>
+        <span>CONTACT</span>
+      </div>
+      <h2 class="contact-title reveal-up">
+        LET'S BUILD<br/><em>SOMETHING GREAT</em>
+      </h2>
+      <p class="contact-sub reveal-up">Have a project in mind? Let's talk.</p>
+      <div class="contact-links reveal-up">
+        <a href="rabhadibyajyoti05@gmail.com" class="contact-link email-link">
+          <span class="cl-icon">✉</span>
+          <span>Mail</span>
+        </a>
+        <a href="https://www.instagram.com/dibo__jyoti__?igsh=emZ4Mng1bHVzdzJj" class="contact-link instagram-link">
+          <span class="cl-icon">⌨</span>
+          <span>Instagram</span>
+        </a>
+        <a href="https://www.instagram.com/dibo__jyoti__?igsh=emZ4Mng1bHVzdzJj" class="contact-link instagram-link">
+          <span class="cl-icon">#</span>
+          <span>@COREDIB</span>
+        </a>
+      </div>
+      <a href="https://www.instagram.com/dibo__jyoti__?igsh=emZ4Mng1bHVzdzJj" class="btn-primary btn-xl reveal-up" style="--delay:0.4s">
+        START A PROJECT
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">[ COREDIB ]</span>
+      <span class="footer-copy">© 2026 — All rights reserved</span>
+      <span class="footer-made">Crafted with creativity</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
